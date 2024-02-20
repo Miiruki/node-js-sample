@@ -14,7 +14,7 @@ jobs:
           command: docker build -t fa_nodejs_sample .
       - run:
           name: Run docker
-          command: docker run -p 8080:8080 fa_nodejs_sample
+          command: docker run -d -p 8080:8080 fa_nodejs_sample
       - run:
           name: Wait for docker to start
           command: sleep 10
