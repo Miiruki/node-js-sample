@@ -20,7 +20,7 @@ jobs:
           command: sleep 10
       - run:
           name: Test connection to docker
-          command: curl http://127.0.0.1
+          command: curl http://127.0.0.1:8080
 
 workflows:
   build:
