@@ -21,7 +21,12 @@ jobs:
       - run:
           name: Test connection to docker
           command: curl http://127.0.0.1:8080
-
+      - run:
+          name: Connect to dockerhub
+          command: echo "$DOCKERPASSWORD" | docker login -u miiruki --password-stdin
+      - run:
+          name: Upload image to dockerhub
+          command: docker tag fa_nodejs_sample "miiruki/fa_nodejs_sample" && docker push "miiruki/fa_nodejs_sample"
 workflows:
   build:
     jobs:
